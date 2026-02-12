@@ -1,0 +1,11 @@
+{
+  "oss_access_key_id": "xxxxx",
+  "oss_access_key_secret": "xxxxx",
+  "oss_bucket_name": "your-bucket-name",
+  "oss_endpoint": "oss-cn-beijing.aliyuncs.com",
+  "dashscope_api_key": "xxxxx",
+  "notion_token": "sxxxxx",
+  "notion_database_id": "xxxxx",
+  "ffmpeg_path": "tools\\ffmpeg\\bin\\ffmpeg.exe",
+  "output_dir": "./output"
+}

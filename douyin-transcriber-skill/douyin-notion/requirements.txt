@@ -1,0 +1,5 @@
+dashscope>=1.20.0
+oss2>=2.18.0
+notion-client>=2.0.0
+playwright>=1.40.0
+requests>=2.28.0
