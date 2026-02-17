@@ -205,3 +205,7 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# 抖音转录工作流敏感文件
+douyin-transcriber-skill/douyin-notion/config.json
+douyin-transcriber-skill/douyin-notion/cookies.txt

@@ -68,18 +68,27 @@ class DouyinDownloader:
                             cookies = []
                             for line in f:
                                 line = line.strip()
-                                if not line or line.startswith("#"):
+                                if not line:
+                                    continue
+                                # 处理#HttpOnly_开头的行
+                                is_http_only = False
+                                if line.startswith("#HttpOnly_"):
+                                    line = line[len("#HttpOnly_"):]
+                                    is_http_only = True
+                                elif line.startswith("#"):
                                     continue
                                 parts = line.split("\t")
                                 if len(parts) >= 7:
-                                    cookies.append(
-                                        {
-                                            "name": parts[5],
-                                            "value": parts[6],
-                                            "domain": parts[0],
-                                            "path": parts[2],
-                                        }
-                                    )
+                                    cookie = {
+                                        "name": parts[5],
+                                        "value": parts[6],
+                                        "domain": parts[0],
+                                        "path": parts[2],
+                                        "secure": parts[3].lower() == "true",
+                                    }
+                                    if is_http_only:
+                                        cookie["httpOnly"] = True
+                                    cookies.append(cookie)
                             await c.add_cookies(cookies)
                         else:
                             # JSON格式
