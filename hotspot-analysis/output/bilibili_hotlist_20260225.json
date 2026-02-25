@@ -1,0 +1,358 @@
+{
+  "platform": "bilibili",
+  "platform_name": "B站",
+  "fetch_time": "2026-02-25 17:26:25",
+  "total": 50,
+  "data": [
+    {
+      "rank": 1,
+      "title": "BLG vs NIP LPL淘汰赛",
+      "hot_value": "https://i0.hdslb.com/bfs/activity-plat/static/20251027/aafcb8031fd171c428daaa9b45867226/VaxAnHMq6w.gif",
+      "url": "https://search.bilibili.com/all?keyword=BLG NIP",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 2,
+      "title": "美大军压境伊朗为何不屈服",
+      "hot_value": "http://i0.hdslb.com/bfs/activity-plat/static/20221213/eaf2dd702d7cc14d8d9511190245d057/lrx9rnKo24.png",
+      "url": "https://search.bilibili.com/all?keyword=美大军压境伊朗为何不屈服",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 3,
+      "title": "国米爆冷无缘欧冠16强",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=国米爆冷无缘欧冠16强",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 4,
+      "title": "WBG战胜IG",
+      "hot_value": "http://i0.hdslb.com/bfs/activity-plat/static/20221213/eaf2dd702d7cc14d8d9511190245d057/lrx9rnKo24.png",
+      "url": "https://search.bilibili.com/all?keyword=WBG IG",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 5,
+      "title": "中方敦促美方停止为重启核试验找借口",
+      "hot_value": "http://i0.hdslb.com/bfs/activity-plat/static/20221118/eaf2dd702d7cc14d8d9511190245d057/UF7B1wVKT2.png",
+      "url": "https://search.bilibili.com/all?keyword=中方敦促美方停止为重启核试验找借口",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 6,
+      "title": "玄界之门石牧对决金五爷",
+      "hot_value": "http://i0.hdslb.com/bfs/activity-plat/static/20240304/fbb6ffcfd09815bd66290b6b7bde1196/OBQYPHMTcv.png",
+      "url": "https://search.bilibili.com/all?keyword=玄界之门",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 7,
+      "title": "TES.A vs JDG KPL春季赛",
+      "hot_value": "https://i0.hdslb.com/bfs/activity-plat/static/20251027/aafcb8031fd171c428daaa9b45867226/VaxAnHMq6w.gif",
+      "url": "https://search.bilibili.com/all?keyword=KPL",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 8,
+      "title": "波比的游戏时间第五章剧情讲解",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=波比的游戏时间第五章剧情讲解",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 9,
+      "title": "熊人修仙传",
+      "hot_value": "http://i0.hdslb.com/bfs/activity-plat/static/20221117/eaf2dd702d7cc14d8d9511190245d057/EeuqbMwao9.png",
+      "url": "https://search.bilibili.com/all?keyword=熊人修仙传",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 10,
+      "title": "速冻饺子为何那么便宜",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=速冻饺子为何那么便宜",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 11,
+      "title": "明日方舟矢量突破攻略",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=明日方舟矢量突破攻略",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 12,
+      "title": "锐评春节档三部影片",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=锐评春节档三部影片",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 13,
+      "title": "隔着网线都尝到奇妙饮料味道了",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=隔着网线都尝到奇妙饮料味道了",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 14,
+      "title": "圆脸对话馆长",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=圆脸对话馆长",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 15,
+      "title": "默茨访华为何要去杭州",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=默茨访华为何要去杭州",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 16,
+      "title": "AIGC动画电影团圆令定档预告",
+      "hot_value": "http://i0.hdslb.com/bfs/activity-plat/static/20221118/eaf2dd702d7cc14d8d9511190245d057/UF7B1wVKT2.png",
+      "url": "https://search.bilibili.com/all?keyword=AIGC动画电影团圆令定档预告",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 17,
+      "title": "墨西哥披露抓捕毒枭行动细节",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=墨西哥披露抓捕毒枭行动细节",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 18,
+      "title": "王者嫦娥墨子元法大改",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=王者嫦娥墨子元法大改",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 19,
+      "title": "终末地密境行者攻略",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=终末地密境行者攻略",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 20,
+      "title": "深度复盘T1遭DK让二追三",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=深度复盘T1遭DK让二追三",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 21,
+      "title": "挑战3天只吃三角洲里的食物",
+      "hot_value": "http://i0.hdslb.com/bfs/activity-plat/static/20221118/eaf2dd702d7cc14d8d9511190245d057/UF7B1wVKT2.png",
+      "url": "https://search.bilibili.com/all?keyword=挑战3天只吃三角洲里的食物",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 22,
+      "title": "PGL克卢日纳波卡精彩集锦",
+      "hot_value": "http://i0.hdslb.com/bfs/activity-plat/static/20221118/eaf2dd702d7cc14d8d9511190245d057/UF7B1wVKT2.png",
+      "url": "https://search.bilibili.com/all?keyword=PGL克卢日纳波卡精彩集锦",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 23,
+      "title": "飞驰人生3如何春节档夺冠",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=飞驰人生3如何春节档夺冠",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 24,
+      "title": "春节档乐子盘点",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=春节档乐子盘点",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 25,
+      "title": "起底Xbox高层更换内幕",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=起底Xbox高层更换内幕",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 26,
+      "title": "王者荣耀S43新赛季前瞻",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=王者荣耀S43新赛季前瞻",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 27,
+      "title": "守望先锋手游开发实机前瞻",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=守望先锋手游开发实机前瞻",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 28,
+      "title": "丁程鑫24岁生日企划",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=丁程鑫24岁生日企划",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 29,
+      "title": "续写熊出没经典神曲",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=续写熊出没经典神曲",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 30,
+      "title": "终末地狂冲盾止现状",
+      "hot_value": "http://i0.hdslb.com/bfs/activity-plat/static/20221117/eaf2dd702d7cc14d8d9511190245d057/EeuqbMwao9.png",
+      "url": "https://search.bilibili.com/all?keyword=终末地狂冲盾止现状",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 31,
+      "title": "美最高法为何裁定关税政策不合法",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=美最高法为何裁定关税政策不合法",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 32,
+      "title": "2026VCT篆刀真金评测",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=2026VCT篆刀真金评测",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 33,
+      "title": "美国教材为何这么贵",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=美国教材为何这么贵",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 34,
+      "title": "TF家族川渝春晚花絮",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=TF家族川渝春晚花絮",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 35,
+      "title": "现在的Vitality到底有多强",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=现在的Vitality到底有多强",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 36,
+      "title": "比利时籍国际乒联官员离世",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=比利时籍国际乒联官员离世",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 37,
+      "title": "三角洲赤枭巡猎人物强度盘点",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=三角洲赤枭巡猎人物强度盘点",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 38,
+      "title": "万字拆解飞驰人生3",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=万字拆解飞驰人生3",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 39,
+      "title": "小时候看这集被ZywOo吓哭了",
+      "hot_value": "http://i0.hdslb.com/bfs/activity-plat/static/20221117/eaf2dd702d7cc14d8d9511190245d057/EeuqbMwao9.png",
+      "url": "https://search.bilibili.com/all?keyword=小时候看这集被ZywOo吓哭了",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 40,
+      "title": "俄乌打了4年发生了哪些变化",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=俄乌打了4年发生了哪些变化",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 41,
+      "title": "二次元发的红包是啥样",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=二次元发的红包是啥样",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 42,
+      "title": "单依纯演唱会二巡官宣",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=单依纯演唱会二巡官宣",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 43,
+      "title": "金牌夫妻徐梦桃王心迪的互相托举",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=金牌夫妻徐梦桃王心迪的互相托举",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 44,
+      "title": "守护解放西探案季定档",
+      "hot_value": "http://i0.hdslb.com/bfs/activity-plat/static/20240304/fbb6ffcfd09815bd66290b6b7bde1196/OBQYPHMTcv.png",
+      "url": "https://search.bilibili.com/all?keyword=守护解放西探案季定档",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 45,
+      "title": "年后上班现状",
+      "hot_value": "http://i0.hdslb.com/bfs/activity-plat/static/20221117/eaf2dd702d7cc14d8d9511190245d057/EeuqbMwao9.png",
+      "url": "https://search.bilibili.com/all?keyword=年后上班现状",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 46,
+      "title": "UP主春节带着蜜蜂去旅游",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=UP主春节带着蜜蜂去旅游",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 47,
+      "title": "王勉曝脱口秀退赛隐情",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=王勉曝脱口秀退赛隐情",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 48,
+      "title": "Hirai为何当选韩国亚运会LOL队教练",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=Hirai为何当选韩国亚运会LOL队教练",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 49,
+      "title": "蛋仔派对新春团圆宴",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=蛋仔派对新春团圆宴",
+      "fetch_time": "2026-02-25 17:26:25"
+    },
+    {
+      "rank": 50,
+      "title": "Spirit游戏物品猜价挑战",
+      "hot_value": "",
+      "url": "https://search.bilibili.com/all?keyword=Spirit游戏物品猜价挑战",
+      "fetch_time": "2026-02-25 17:26:25"
+    }
+  ]
+}

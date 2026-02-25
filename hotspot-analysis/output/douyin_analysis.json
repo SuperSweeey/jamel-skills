@@ -1,0 +1,188 @@
+{
+  "source_data": {
+    "platform": "douyin",
+    "platform_name": "抖音",
+    "fetch_time": "2026-02-25 17:26:25",
+    "total": 50
+  },
+  "analysis_time": "2026-02-25 17:27:03",
+  "analysis_results": {
+    "title_length": {
+      "avg_length": 11.02,
+      "max_length": 15,
+      "min_length": 6,
+      "median_length": 11,
+      "std_length": 2.41,
+      "length_distribution": {
+        "very_short (<5)": 0,
+        "short (5-10)": 14,
+        "medium (10-20)": 36,
+        "long (20-30)": 0,
+        "very_long (>30)": 0
+      }
+    },
+    "keywords": [
+      {
+        "keyword": "吸尘器",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "太难吃了",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "伊朗大规模军演",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "试射多种导弹",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "这份粮食成绩单请查收",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "德国总理默茨抵达北京",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "中方在涉乌联大表决中投弃权票",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "朱雀三号计划再次挑战回收",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "全球首创全涵道式",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "eVTOL",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "试飞",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "媒体评默茨访华",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "骑士",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "109",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "94",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "大胜尼克斯",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "阿富汗与巴基斯坦在边境爆发冲突",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "中外性能车挑战纽北",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "维生素",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "缺乏是因为过度防晒吗",
+        "count": 1,
+        "percentage": 2.0
+      }
+    ],
+    "hot_value": {
+      "total_items": 50,
+      "valid_items": 50,
+      "avg_hot_value": 8240953.98,
+      "max_hot_value": 11790919.0,
+      "min_hot_value": 7643835.0,
+      "median_hot_value": 7733408.0,
+      "std_hot_value": 1079335.99,
+      "percentiles": {
+        "p10": 7662006.0,
+        "p30": 7691507.0,
+        "p50": 7733408.0,
+        "p70": 7806734.9,
+        "p90": 10250915.8
+      },
+      "hot_value_distribution": {
+        "very_high (>p90)": 5,
+        "high (p70-p90)": 10,
+        "medium (p30-p70)": 20,
+        "low (p10-p30)": 10,
+        "very_low (<p10)": 5
+      }
+    },
+    "topics": {
+      "娱乐": {
+        "count": 5,
+        "percentage": 10.0
+      },
+      "科技": {
+        "count": 1,
+        "percentage": 2.0
+      },
+      "生活": {
+        "count": 1,
+        "percentage": 2.0
+      },
+      "游戏": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "社会": {
+        "count": 1,
+        "percentage": 2.0
+      },
+      "教育": {
+        "count": 1,
+        "percentage": 2.0
+      },
+      "体育": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "财经": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "其他": {
+        "count": 41,
+        "percentage": 82.0
+      }
+    }
+  }
+}

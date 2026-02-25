@@ -1,0 +1,170 @@
+{
+  "source_data": {
+    "platform": "bilibili",
+    "platform_name": "B站",
+    "fetch_time": "2026-02-25 17:26:25",
+    "total": 50
+  },
+  "analysis_time": "2026-02-25 17:27:19",
+  "analysis_results": {
+    "title_length": {
+      "avg_length": 11.64,
+      "max_length": 20,
+      "min_length": 5,
+      "median_length": 12,
+      "std_length": 3.17,
+      "length_distribution": {
+        "very_short (<5)": 0,
+        "short (5-10)": 12,
+        "medium (10-20)": 37,
+        "long (20-30)": 1,
+        "very_long (>30)": 0
+      }
+    },
+    "keywords": [
+      {
+        "keyword": "vs",
+        "count": 2,
+        "percentage": 4.0
+      },
+      {
+        "keyword": "BLG",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "NIP",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "LPL",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "淘汰赛",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "美大军压境伊朗为何不屈服",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "国米爆冷无缘欧冠",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "16",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "WBG",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "战胜",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "IG",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "中方敦促美方停止为重启核试验找借口",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "玄界之门石牧对决金五爷",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "TES",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "JDG",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "KPL",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "春季赛",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "波比的游戏时间第五章剧情讲解",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "熊人修仙传",
+        "count": 1,
+        "percentage": 2.0
+      },
+      {
+        "keyword": "速冻饺子为何那么便宜",
+        "count": 1,
+        "percentage": 2.0
+      }
+    ],
+    "hot_value": {
+      "error": "未找到有效的热度值",
+      "total_items": 50,
+      "valid_items": 0
+    },
+    "topics": {
+      "娱乐": {
+        "count": 3,
+        "percentage": 6.0
+      },
+      "科技": {
+        "count": 1,
+        "percentage": 2.0
+      },
+      "生活": {
+        "count": 2,
+        "percentage": 4.0
+      },
+      "游戏": {
+        "count": 3,
+        "percentage": 6.0
+      },
+      "社会": {
+        "count": 1,
+        "percentage": 2.0
+      },
+      "教育": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "体育": {
+        "count": 3,
+        "percentage": 6.0
+      },
+      "财经": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "其他": {
+        "count": 37,
+        "percentage": 74.0
+      }
+    }
+  }
+}
