@@ -16,15 +16,23 @@ from .logger import Logger
 class DouyinDownloader:
     """抖音视频下载器"""
 
-    def __init__(self, output_dir: str = "./downloads"):
+    def __init__(self, output_dir: str = "./downloads", cookies_path: str = None):
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.vurl = None
         self.cookies_path = None
 
+        # 如果提供了cookies_path，直接使用
+        if cookies_path:
+            if Path(cookies_path).exists():
+                self.cookies_path = str(cookies_path)
+                Logger.info(f"使用指定的cookies文件: {cookies_path}")
+                return
+
         # 自动查找cookies.txt
         possible_paths = [
             Path("cookies.txt"),
+            Path("skills/jamel-skills/douyin-transcriber-skill/douyin-notion/cookies.txt"),
             Path("../douyin-notion/cookies.txt"),
         ]
         for path in possible_paths:

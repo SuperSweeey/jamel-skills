@@ -1,0 +1,14 @@
+{
+  "oss_access_key_id": "你的AccessKey ID",
+  "oss_access_key_secret": "你的AccessKey Secret",
+  "oss_bucket_name": "你的Bucket名称",
+  "oss_endpoint": "oss-cn-beijing.aliyuncs.com",
+  "dashscope_api_key": "sk-你的DashScope API Key",
+  "notion_token": "secret_你的Notion Token",
+  "notion_database_id": "你的数据库ID",
+  "github_token": "ghp_你的GitHub Token",
+  "github_repo": "SuperSweeey.github.io",
+  "cubox_api_url": "你的Cubox API URL",
+  "ffmpeg_path": "/usr/bin/ffmpeg",
+  "output_dir": "./output"
+}
