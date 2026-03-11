@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).parent
 
 
 def generate_ai_title(transcript, api_key, api_url, max_retries=3):
-    """用智谱AI glm-4.7-flash 生成吸引人的一句话标题"""
+    """用阿里百炼 Qwen 模型生成吸引人的一句话标题"""
     import requests
     for attempt in range(1, max_retries + 1):
         try:
@@ -19,7 +19,7 @@ def generate_ai_title(transcript, api_key, api_url, max_retries=3):
                 "Content-Type": "application/json"
             }
             payload = {
-                "model": "glm-4.7-flash",
+                "model": api_url["model"],
                 "messages": [
                     {
                         "role": "system",
@@ -30,13 +30,16 @@ def generate_ai_title(transcript, api_key, api_url, max_retries=3):
                         "content": f"请为下面的文本生成标题：\n{transcript[:4000]}"
                     }
                 ],
-                "max_tokens": 1500,
+                "max_tokens": 120,
                 "temperature": 0.8
             }
-            resp = requests.post(api_url, headers=headers, json=payload, timeout=90)
+            resp = requests.post(api_url["endpoint"], headers=headers, json=payload, timeout=45)
             resp.raise_for_status()
             msg = resp.json()["choices"][0]["message"]
-            content = msg.get("content", "").strip()
+            content = msg.get("content", "")
+            if isinstance(content, list):
+                content = "".join(item.get("text", "") for item in content if isinstance(item, dict))
+            content = (content or "").strip()
             
             if not content:
                 reasoning = msg.get("reasoning_content", "")
@@ -99,7 +102,11 @@ def dispatch(transcript, title, url, platform, config, cli_targets=None, dry_run
     targets = resolve_targets(rules, platform, cli_targets)
     
     # 先用AI生成吸引人的标题
-    ai_title = generate_ai_title(transcript, config.zhipu_api_key, config.zhipu_api_url)
+    title_client = {
+        "model": getattr(config, "title_model", "qwen3.5-flash"),
+        "endpoint": f"{getattr(config, 'title_api_base', 'https://dashscope.aliyuncs.com/compatible-mode/v1').rstrip('/')}/chat/completions",
+    }
+    ai_title = generate_ai_title(transcript, config.dashscope_api_key, title_client)
     final_title = ai_title if ai_title else title
     
     result = {

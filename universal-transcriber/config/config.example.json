@@ -1,0 +1,17 @@
+{
+  "oss_access_key_id": "YOUR_OSS_ACCESS_KEY_ID",
+  "oss_access_key_secret": "YOUR_OSS_ACCESS_KEY_SECRET",
+  "oss_bucket_name": "your-bucket-name",
+  "oss_endpoint": "oss-cn-beijing.aliyuncs.com",
+  "dashscope_api_key": "YOUR_DASHSCOPE_API_KEY",
+  "notion_token": "YOUR_NOTION_TOKEN",
+  "notion_database_id": "YOUR_NOTION_DATABASE_ID",
+  "ffmpeg_path": "C:\\path\\to\\ffmpeg\\bin\\ffmpeg.exe",
+  "output_dir": "C:\\path\\to\\universal-transcriber\\output",
+  "zhipu_api_key": "YOUR_ZHIPU_API_KEY",
+  "zhipu_api_url": "https://open.bigmodel.cn/api/paas/v4/chat/completions",
+  "github_token": "YOUR_GITHUB_TOKEN",
+  "github_user": "YOUR_GITHUB_USERNAME",
+  "github_repo": "YOUR_GITHUB_REPO",
+  "github_repo_dir": "C:\\path\\to\\your\\github-repo"
+}

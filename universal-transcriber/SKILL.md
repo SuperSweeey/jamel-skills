@@ -10,56 +10,95 @@ allowed-tools: Bash
 
 将视频链接转录为文字，可选择分发到指定平台。
 
-## 执行命令
+## Windows 使用方式
 
-```bash
-cd /root/.openclaw/workspace/skills/universal-transcriber
-python3 main.py --platform <平台> --url "<链接>" [OPTIONS]
+本机安装路径：
+
+```powershell
+C:\Users\26084\.codex\skills\universal-transcriber
+```
+
+在 Windows PowerShell 中，先切到该目录再执行：
+
+```powershell
+Set-Location 'C:\Users\26084\.codex\skills\universal-transcriber'
+python .\main.py --platform <平台> --url "<链接>" [OPTIONS]
+```
+
+如果你的环境里 `python` 不可用，可改用：
+
+```powershell
+py .\main.py --platform <平台> --url "<链接>" [OPTIONS]
 ```
 
 ## 支持平台
 
 | 平台 | 参数值 | 需要 cookies |
 |------|--------|-------------|
-| 抖音 | `douyin` | ✅ `config/douyin_cookies.txt` |
-| B站 | `bilibili` | ✅ `config/bilibili_cookies.txt` |
-| 小红书 | `xiaohongshu` | ✅ `config/xiaohongshu_cookies.txt` |
-| YouTube | `youtube` | 可选（服务器网络限制，暂不可用）|
+| 抖音 | `douyin` | 是，通常需要 |
+| B站 | `bilibili` | 是，通常需要 |
+| 小红书 | `xiaohongshu` | 是，通常需要 |
+| YouTube | `youtube` | 可选 |
 
 ## 参数说明
 
 | 参数 | 说明 | 示例 |
 |------|------|------|
 | `--platform` | 视频平台 | `douyin` |
-| `--url` | 视频链接（用引号包裹） | `"https://v.douyin.com/xxx"` |
-| `--cookies` | cookies 文件路径 | `config/douyin_cookies.txt` |
-| `--send` | 分发目标，可叠加 | `--send notion --send github` |
-| `--dry-run` | 只转录不分发，输出 JSON | `--dry-run` |
+| `--url` | 视频链接 | `"https://v.douyin.com/xxx"` |
+| `--cookies` | cookies 文件路径 | `".\config\douyin_cookies.txt"` |
+| `--send` | 分发目标，可重复传入 | `--send notion --send github` |
+| `--dry-run` | 只转录不分发 | `--dry-run` |
 
-## 重要：每次运行前必须确认 Notion 数据库
+## Windows 示例命令
 
-默认 Notion 数据库为「资料默认库」，运行前必须向用户确认是否存入此库，或指定其他库。
+```powershell
+# 抖音：只转录，不分发
+Set-Location 'C:\Users\26084\.codex\skills\universal-transcriber'
+python .\main.py --platform douyin --url "https://v.douyin.com/xxx" --cookies ".\config\douyin_cookies.txt" --dry-run
 
-可用数据库别名（定义在 `config/send_rules.yaml`）：
-- `default`：资料默认库（3185c3ba...）
-- `ai_learning`：Ai Learning & Creating（20a5c3ba...）
+# B站：转录并发送到 Notion
+python .\main.py --platform bilibili --url "https://www.bilibili.com/video/xxx" --cookies ".\config\bilibili_cookies.txt" --send notion
 
-## 调用示例
-
-```bash
-# 转录抖音，存 Notion + GitHub
-python3 main.py --platform douyin --url "https://v.douyin.com/xxx" --cookies config/douyin_cookies.txt --send notion --send github
-
-# 只转录，获取文字内容（不分发）
-python3 main.py --platform bilibili --url "https://www.bilibili.com/video/xxx" --cookies config/bilibili_cookies.txt --dry-run
-
-# 小红书转录存 Notion
-python3 main.py --platform xiaohongshu --url "https://www.xiaohongshu.com/xxx" --cookies config/xiaohongshu_cookies.txt --send notion
+# 小红书：转录并发送到 Notion 和 GitHub
+python .\main.py --platform xiaohongshu --url "https://www.xiaohongshu.com/xxx" --cookies ".\config\xiaohongshu_cookies.txt" --send notion --send github
 ```
 
-## 输出格式（AI 可直接解析）
+## 运行前检查
 
-结构化 JSON 位于 `=== RESULT_JSON_START ===` 和 `=== RESULT_JSON_END ===` 之间：
+运行前通常需要准备这些内容：
+
+- `config\config.json`
+- 对应平台的 cookies 文件
+- `ffmpeg`
+- Python 依赖，例如 `dashscope`、`notion-client`、`playwright`、`requests`
+
+当前仓库默认会读取：
+
+```powershell
+C:\Users\26084\.codex\skills\universal-transcriber\config\config.json
+```
+
+如果这个文件不存在，脚本会直接失败。
+
+## Notion 数据库确认
+
+默认 Notion 数据库为「资料默认库」。运行前应确认是否写入该库，或者改成其他库。
+
+可用数据库别名定义在：
+
+```powershell
+C:\Users\26084\.codex\skills\universal-transcriber\config\send_rules.yaml
+```
+
+已知别名：
+
+- `default`：资料默认库
+- `ai_learning`：Ai Learning & Creating
+
+## 输出格式
+
+结构化 JSON 位于 `=== RESULT_JSON_START ===` 和 `=== RESULT_JSON_END ===` 之间，典型格式如下：
 
 ```json
 {
@@ -70,7 +109,7 @@ python3 main.py --platform xiaohongshu --url "https://www.xiaohongshu.com/xxx" -
   "original_title": "原始标题",
   "char_count": 889,
   "transcript": "转录全文...",
-  "transcript_file": "/path/to/transcript.txt",
+  "transcript_file": "C:\\path\\to\\transcript.txt",
   "send_results": {
     "notion": "success",
     "github": "success"
@@ -79,38 +118,41 @@ python3 main.py --platform xiaohongshu --url "https://www.xiaohongshu.com/xxx" -
 }
 ```
 
-## 错误处理
+## 常见问题
 
-- **下载失败**：检查 cookies 是否过期，重新导出后替换对应文件
-- **转录失败 Connection refused**：DashScope 偶发问题，重试即可
-- **Notion 失败**：检查 Integration 是否有目标数据库权限
-- **GitHub 推送失败**：自动重试 3 次
+- 下载失败：先检查 cookies 是否过期。
+- 转录失败：检查 DashScope 密钥和网络。
+- Notion 失败：检查 Integration 权限和数据库 ID。
+- GitHub 推送失败：检查 token、仓库目录和本地 git 状态。
 
----
-
-## 🔴 Bug 记录（每次遇到 Bug 必须更新此处）
+## Bug 记录
 
 ### Bug #1：OSS 上传后转录失败 FILE_DOWNLOAD_FAILED
-- **时间**：2026-03-03
-- **原因**：main.py 跳过 OSS 上传，直接把本地路径传给转录器
-- **解决**：Step 3 补上 OSS 上传，把 oss_url 传给转录器
+
+- 时间：2026-03-03
+- 原因：`main.py` 跳过 OSS 上传，直接把本地路径传给转录器
+- 解决：Step 3 补上 OSS 上传，把 `oss_url` 传给转录器
 
 ### Bug #2：pipeline 相对导入失败
-- **时间**：2026-03-03
-- **原因**：pipeline 模块用相对导入，被 importlib 动态加载时失效
-- **解决**：批量替换为绝对导入
+
+- 时间：2026-03-03
+- 原因：`pipeline` 模块用相对导入，被 `importlib` 动态加载时失效
+- 解决：批量替换为绝对导入
 
 ### Bug #3：Notion 一直用旧数据库 ID
-- **时间**：2026-03-04
-- **原因**：config.json 旧 ID 未更新，dispatcher fallback 读了旧值
-- **解决**：更新 config.json，dispatcher 严格从 send_rules.yaml 取，不 fallback
 
-### Bug #4：智谱AI glm-4.7-flash 返回空 content
-- **时间**：2026-03-04
-- **原因**：推理模型 max_tokens 太小，推理未完成就截断
-- **解决**：max_tokens 改为 1500，加重试机制（3次，间隔5秒）
+- 时间：2026-03-04
+- 原因：`config.json` 旧 ID 未更新，`dispatcher` fallback 读了旧值
+- 解决：更新 `config.json`，`dispatcher` 严格从 `send_rules.yaml` 取，不 fallback
 
-### Bug #5：git pull 失败导致推送异常
-- **时间**：2026-03-04
-- **错误**：`cannot pull with rebase: You have unstaged changes`
-- **解决**：push 前先 git stash，pull 后再 git stash pop
+### Bug #4：智谱 AI `glm-4.7-flash` 返回空 content
+
+- 时间：2026-03-04
+- 原因：推理模型 `max_tokens` 太小，推理未完成就截断
+- 解决：`max_tokens` 改为 1500，加重试机制
+
+### Bug #5：`git pull` 失败导致推送异常
+
+- 时间：2026-03-04
+- 错误：`cannot pull with rebase: You have unstaged changes`
+- 解决：push 前先 `git stash`，pull 后再 `git stash pop`

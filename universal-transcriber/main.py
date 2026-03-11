@@ -3,6 +3,7 @@ import sys
 import uuid
 import json
 import os
+import traceback
 from pathlib import Path
 
 BASE_DIR = Path(__file__).parent
@@ -20,6 +21,26 @@ from dispatcher import dispatch
 
 PLATFORMS = ["douyin", "bilibili", "youtube", "xiaohongshu"]
 SENDERS = ["notion", "github", "flomo"]
+
+
+def configure_console():
+    """Force UTF-8 console output on Windows to avoid mojibake."""
+    if os.name == "nt":
+        try:
+            import ctypes
+
+            ctypes.windll.kernel32.SetConsoleCP(65001)
+            ctypes.windll.kernel32.SetConsoleOutputCP(65001)
+        except Exception:
+            pass
+
+    for stream_name in ("stdout", "stderr"):
+        stream = getattr(sys, stream_name, None)
+        if hasattr(stream, "reconfigure"):
+            try:
+                stream.reconfigure(encoding="utf-8", errors="replace")
+            except Exception:
+                pass
 
 def get_downloader(platform):
     import importlib.util
@@ -46,6 +67,7 @@ def cleanup_video(video_path):
         Logger.warning(f"删除视频文件失败: {e}")
 
 def main():
+    configure_console()
     args = sys.argv[1:]
 
     if "--platform" not in args or "--url" not in args:
@@ -85,14 +107,17 @@ def main():
     oss_object = None
     uploader = None
     video_path = None
+    stage = "初始化"
 
     try:
         # Step 1: 下载
+        stage = "下载视频"
         Logger.step(1, 5, "下载视频", task_id)
         video_path = downloader.download(url, str(download_dir), task_id, cookies_path)
         Logger.info(f"下载完成: {video_path}")
 
         # Step 2: 提取音频
+        stage = "提取音频"
         Logger.step(2, 5, "提取音频", task_id)
         extractor = AudioExtractor(str(audio_dir), config.ffmpeg_path)
         audio_path = extractor.extract(video_path, f"audio_{task_id}")
@@ -103,6 +128,7 @@ def main():
         video_path = None
 
         # Step 3: 上传OSS
+        stage = "上传OSS"
         Logger.step(3, 5, "上传到OSS", task_id)
         uploader = OSSUploader(
             config.oss_access_key_id,
@@ -114,6 +140,7 @@ def main():
         Logger.info("OSS上传完成")
 
         # Step 4: 转录
+        stage = "云端转录"
         Logger.step(4, 5, "云端转录", task_id)
         transcriber = CloudTranscriber(config.dashscope_api_key)
         transcript = transcriber.transcribe(oss_url, task_id=task_id)
@@ -123,6 +150,7 @@ def main():
         print(f"\n转录预览（前300字）:\n{transcript[:300]}\n")
 
         # Step 5: 分发
+        stage = "分发内容"
         Logger.step(5, 5, "分发内容", task_id)
         title = downloader.get_title(url, cookies_path) or f"{platform}_{task_id}"
         dispatch_result = dispatch(
@@ -153,8 +181,12 @@ def main():
             "task_status": "failed",
             "platform": platform,
             "url": url,
+            "stage": stage,
             "error": str(e)
         }
+        print(json.dumps(error_result, ensure_ascii=False, indent=2), file=sys.stderr)
+        Logger.error(f"任务失败，阶段: {stage} | 原因: {e}", task_id)
+        traceback.print_exc()
         sys.exit(1)
     finally:
         try:

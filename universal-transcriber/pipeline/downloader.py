@@ -167,19 +167,36 @@ class DouyinDownloader:
 
         return bool(self.vurl)
 
+    def _classify_download_error(self, exc: Exception) -> tuple[str, str]:
+        if isinstance(exc, requests.exceptions.Timeout):
+            return "NETWORK_TIMEOUT", "下载超时，建议稍后重试。"
+        if isinstance(exc, requests.exceptions.HTTPError):
+            status_code = exc.response.status_code if exc.response is not None else "unknown"
+            if status_code == 403:
+                return "ACCESS_DENIED", "视频被平台拒绝访问，可能需要 cookies 或请求头已失效。"
+            if status_code == 429:
+                return "RATE_LIMITED", "平台限流，建议稍后重试。"
+            return "HTTP_ERROR", f"下载接口返回 HTTP {status_code}。"
+        if isinstance(exc, requests.exceptions.RequestException):
+            return "NETWORK_ERROR", "网络异常导致下载失败。"
+        return "UNKNOWN", str(exc)
+
     def download(self, url: str, filename: str = None) -> str:
         """下载视频"""
-        import requests
-
         self.vurl = None
-
-        try:
-            asyncio.run(self._capture(url))
-        except Exception as e:
-            Logger.error(f"Playwright运行失败: {e}")
+        for attempt in range(1, 4):
+            try:
+                Logger.info(f"开始解析抖音视频地址（第 {attempt}/3 次）")
+                asyncio.run(self._capture(url))
+                if self.vurl:
+                    break
+            except Exception as e:
+                Logger.warning(f"Playwright运行失败（第 {attempt}/3 次）: {e}")
+            if attempt < 3:
+                time.sleep(2 * attempt)
 
         if not self.vurl:
-            raise RuntimeError("无法获取视频下载链接")
+            raise RuntimeError("抖音下载失败[CAPTURE_FAILED]: 无法获取视频下载链接，可能是页面结构变化、网络异常或缺少有效 cookies。")
 
         if not filename:
             filename = f"douyin_{int(time.time())}"
@@ -187,24 +204,39 @@ class DouyinDownloader:
         out = self.output_dir / f"{filename}.mp4"
         Logger.info(f"下载视频到: {out}")
 
-        r = requests.get(
-            self.vurl, headers={"User-Agent": "Mozilla/5.0"}, stream=True, timeout=120
-        )
-        r.raise_for_status()
+        for attempt in range(1, 4):
+            try:
+                r = requests.get(
+                    self.vurl,
+                    headers={"User-Agent": "Mozilla/5.0"},
+                    stream=True,
+                    timeout=120,
+                )
+                r.raise_for_status()
 
-        total_size = int(r.headers.get("content-length", 0))
-        downloaded = 0
+                total_size = int(r.headers.get("content-length", 0))
+                downloaded = 0
 
-        with open(out, "wb") as f:
-            for chunk in r.iter_content(chunk_size=8192):
-                if chunk:
-                    f.write(chunk)
-                    downloaded += len(chunk)
-                    if total_size > 0 and downloaded % (1024 * 1024) < 8192:
-                        percent = (downloaded / total_size) * 100
-                        print(f"\r  进度: {percent:.1f}%", end="", flush=True)
+                with open(out, "wb") as f:
+                    for chunk in r.iter_content(chunk_size=8192):
+                        if chunk:
+                            f.write(chunk)
+                            downloaded += len(chunk)
+                            if total_size > 0 and downloaded % (1024 * 1024) < 8192:
+                                percent = (downloaded / total_size) * 100
+                                print(f"\r  进度: {percent:.1f}%", end="", flush=True)
 
-        print()
+                print()
+                break
+            except Exception as e:
+                code, hint = self._classify_download_error(e)
+                if out.exists():
+                    out.unlink(missing_ok=True)
+                if attempt < 3 and code in {"NETWORK_TIMEOUT", "NETWORK_ERROR", "RATE_LIMITED"}:
+                    Logger.warning(f"抖音下载重试（第 {attempt}/3 次）: {code} - {hint}")
+                    time.sleep(3 * attempt)
+                    continue
+                raise RuntimeError(f"抖音下载失败[{code}]: {hint}") from e
 
         file_size = out.stat().st_size / (1024 * 1024)
         Logger.success(f"下载完成: {out.name} ({file_size:.2f} MB)")

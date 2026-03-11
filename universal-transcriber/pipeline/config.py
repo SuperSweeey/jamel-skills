@@ -25,6 +25,8 @@ class Config:
     output_dir: str = "./output"
     zhipu_api_key: str = ""
     zhipu_api_url: str = "https://open.bigmodel.cn/api/paas/v4/chat/completions"
+    title_model: str = "qwen3.5-flash"
+    title_api_base: str = "https://dashscope.aliyuncs.com/compatible-mode/v1"
     github_token: str = ""
     github_user: str = "SuperSweeey"
     github_repo: str = "SuperSweeey.github.io"
