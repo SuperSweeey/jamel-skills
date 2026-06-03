@@ -1,4 +1,4 @@
-# Universal Transcriber Skill
+# Universal Transcriber Skill 万物转录.skill
 
 把任何一个视频链接，变成完整文字，再送到你要去的地方。
 
