@@ -8,7 +8,7 @@ DOWNLOAD · TRANSCRIBE · DISTRIBUTE
 
 它不是普通下载器，也不是单纯的语音识别脚本，而是一条把视频接进知识工作流的入口。
 
-想看更完整的费用拆分和技术路线，请看 [费用和技术路线说明.md](<C:/Users/26084/.codex/skills/universal-transcriber/费用和技术路线说明.md>).
+想看更完整的费用拆分和技术路线，请看 [费用和技术路线说明.md]
 
 ## 适合谁使用
 
