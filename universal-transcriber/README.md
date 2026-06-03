@@ -14,10 +14,6 @@ DOWNLOAD · TRANSCRIBE · DISTRIBUTE
 
 - 需要把公开视频、课程视频、访谈视频、播客视频转成文字的人
 - 需要把转写结果保存到 Notion、GitHub Pages 或 Flomo 的内容整理者
-- 第一次使用时不知道 DashScope、OSS、ffmpeg、Python 依赖怎么配置的人
-- 希望失败时能定位是下载、音频、OSS、转写还是分发阶段出问题的人
-- 希望默认不保存视频文件，只保留转写结果的人
-- 希望 cookies 只在下载失败后再处理，而不是一开始就被要求配置的人
 
 ## 核心能力
 
