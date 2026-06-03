@@ -1,0 +1,8 @@
+universal-transcriber/config/config.json
+universal-transcriber/config/*_cookies.txt
+universal-transcriber/__pycache__/
+universal-transcriber/**/__pycache__/
+universal-transcriber/**/*.pyc
+universal-transcriber/output/
+universal-transcriber/.pytest_cache/
+universal-transcriber/.mypy_cache/

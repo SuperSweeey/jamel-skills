@@ -1,0 +1,35 @@
+version: "1.0"
+
+ai_policy:
+  on_transcribe_success:
+    - notion
+    - github
+  on_transcribe_fail:
+    - abort
+  on_send_fail:
+    strategy: continue
+    max_retries: 1
+
+default_notion_database: default
+
+platform_rules:
+  douyin:
+    send: [notion, github]
+    notion_database: default
+  bilibili:
+    send: [notion, github]
+    notion_database: default
+  xiaohongshu:
+    send: [notion, github]
+    notion_database: default
+  youtube:
+    send: [notion, github]
+    notion_database: default
+
+notion_databases:
+  default: "3185c3bafe9e80f78310cd316ba62121"
+  ai_learning: "20a5c3bafe9e805a90b9c078c01a8f36"
+
+dry_run:
+  skip_send: true
+  output_format: json
