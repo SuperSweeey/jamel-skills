@@ -84,7 +84,7 @@ material-pack_<主题>/
 - AI 配图
 - AI 视频 prompt 撰写
 
-视频下载默认可以走现成的 `universal-transcriber` 流程；如果更适合直接抓取视频，也可以使用 `yt-dlp`。动画部分则可以调用 Remotion，在需要的时候补足时间线、对比图、信息图或流程动画。
+视频下载默认走`yt-dlp`。动画部分则可以调用 Remotion，在需要的时候补足时间线、对比图、信息图或流程动画。
 
 ## 质量标准
 
