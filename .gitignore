@@ -6,3 +6,6 @@ universal-transcriber/**/*.pyc
 universal-transcriber/output/
 universal-transcriber/.pytest_cache/
 universal-transcriber/.mypy_cache/
+material-search-assistant/.env
+material-search-assistant/**/__pycache__/
+material-search-assistant/**/*.pyc

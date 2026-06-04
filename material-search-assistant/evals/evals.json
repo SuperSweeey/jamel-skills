@@ -1,0 +1,35 @@
+{
+  "skill_name": "material-search-assistant",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I have a short-form video script about a viral AI agent. Build a creator-ready material brief, organize a material-pack scaffold, and explain how you would verify that each screenshot or video clip truly matches the script instead of only matching the title.",
+      "expected_output": "The response should show script segmentation, platform-aware search planning, multimodal verification rules, and an editor-friendly folder structure.",
+      "files": [
+        "assets/sample-script.txt"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I already have a material-log.csv with candidate screenshots and clips. Grade them into A, B, or C using a clear quality rubric, and explain why ad-heavy or title-only matches should be rejected.",
+      "expected_output": "The response should apply the scoring model, explain hard filters, and produce a traceable selection decision.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I have a script where some segments should use real screenshots, but the workflow demo and product explanation would be better as motion design. Decide which segments should use Remotion, ask me to choose a style from a short option list, and produce a timeline brief plus a Remotion brief.",
+      "expected_output": "The response should assign visual modes per segment, require user-confirmed Remotion style selection, and define structured timeline/remotion outputs rather than vague animation wishes.",
+      "files": [
+        "assets/sample-script.txt"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "This script needs a few empty shots and special camera moments between evidence-heavy sections. Search for suitable atmosphere shots and transition shots first, and if the footage options are weak, generate video prompts as fallbacks with framing, camera motion, mood, and negative keywords.",
+      "expected_output": "The response should distinguish shot-library needs from evidence needs, search for real shots first, and produce generation-ready video prompt fallbacks when sourcing is weak.",
+      "files": [
+        "assets/sample-script.txt"
+      ]
+    }
+  ]
+}
