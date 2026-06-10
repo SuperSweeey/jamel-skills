@@ -5,7 +5,7 @@ This guide is for a first-time user who does not yet know which keys are require
 Start with the read-only setup check:
 
 ```powershell
-cd C:\Users\26084\.codex\skills\universal-transcriber
+cd skill位置
 python .\scripts\check_setup.py
 ```
 
